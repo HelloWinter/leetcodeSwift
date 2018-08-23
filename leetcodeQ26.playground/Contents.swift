@@ -38,3 +38,25 @@ import UIKit
  print(nums[i]);
  }
  */
+
+func removeDuplicates(_ nums: inout [Int]) -> Int {
+    var i = 0
+    while i < nums.count-1 {
+        let j = i + 1
+        while j < nums.count {
+            if nums[i] == nums[j] {
+                nums.remove(at: j)
+            }else{
+                i = j
+                break
+            }
+        }
+    }
+    return nums.count
+}
+
+var nums = [1,1,2]
+
+print(removeDuplicates(&nums))
+print(nums)
+
