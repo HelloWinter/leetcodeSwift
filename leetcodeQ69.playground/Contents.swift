@@ -1,6 +1,6 @@
 //: Playground - noun: a place where people can play
 
-import UIKit
+import Foundation
 
 /**x 的平方根
  实现 int sqrt(int x) 函数。
@@ -20,3 +20,12 @@ import UIKit
  说明: 8 的平方根是 2.82842...,
  由于返回类型是整数，小数部分将被舍去。
  */
+
+/**
+ 设置递增整数变量n，计算n平方和（n+1）的平方，如果x大于n的平方小于（n+1）的平方返回n
+ */
+
+func mySqrt(_ x: Int) -> Int {
+    
+    return 0
+}

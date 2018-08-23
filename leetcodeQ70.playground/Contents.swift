@@ -24,4 +24,52 @@ import Foundation
  1.  1 阶 + 1 阶 + 1 阶
  2.  1 阶 + 2 阶
  3.  2 阶 + 1 阶
+ 
+ 4
+ 1 1 1 1
+ 0 1 2 1
+ 0 2 1 1
+ 0 1 1 2
+ 0 0 2 2
+ 
+ 5
+ 1 1 1 1 1
+ 2 1 1 1
+ 1 2 1 1
+ 1 1 2 1
+ 1 1 1 2
+ 1 2 2
+ 2 1 2
+ 2 2 1
+ 
+ 6
+ 111111
+ 21111
+ 12111
+ 11211
+ 11121
+ 11112
+ 
+ 2211
+ 1221
+ 1122
+ 2112
+ 
+ 1212
+ 2121
+ 
+ 222
+ 
  */
+
+func climbStairs(_ n: Int) -> Int {
+    if n == 1{
+        return 1
+    }else if n == 2 {
+        return 2
+    }else{
+        return climbStairs(n-1) + climbStairs(n-2)
+    }
+}
+
+climbStairs(6)

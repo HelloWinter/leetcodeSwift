@@ -16,3 +16,19 @@ import Foundation
  输入: a = "1010", b = "1011"
  输出: "10101"
  */
+
+func addBinary(_ a: String, _ b: String) -> String {
+    let num = binaryToDec(a) + binaryToDec(b)
+    return String(num, radix: 2, uppercase: false)
+}
+
+func binaryToDec(_ num : String) -> Int{
+    var sum = 0
+    for c in num {
+        sum = sum * 2 + Int("\(c)")!
+    }
+    return sum
+}
+
+//binaryToDec("1001")
+addBinary("1010", "1011")
