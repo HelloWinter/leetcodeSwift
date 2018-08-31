@@ -11,8 +11,8 @@ import Foundation
  3
  / \
  9  20
- /  \
- 15   7
+    /  \
+    15   7
  返回其自底向上的层次遍历为：
  
  [
@@ -34,6 +34,42 @@ public class TreeNode {
 }
 
 func levelOrderBottom(_ root: TreeNode?) -> [[Int]] {
-    return [[0]]
+    var levelArr = [[TreeNode]]()
+    var level = [TreeNode]()
+    level.append(root!)
+    
+    var result = [[Int]]()
+    var levelNum = [Int]()
+    levelNum.append(root!.val)
+    while level.count != 0 {
+        levelArr.insert(level, at: 0)
+        result.insert(levelNum, at: 0)
+        var nextLevel = [TreeNode]()
+        var nextLevelNum = [Int]()
+        for node in level {
+            if node.left != nil {
+                nextLevel.append(node.left!)
+                nextLevelNum.append(node.left!.val)
+            }
+            if node.right != nil {
+                nextLevel.append(node.right!)
+                nextLevelNum.append(node.right!.val)
+            }
+        }
+        level = nextLevel
+        levelNum = nextLevelNum
+    }
+    return result
 }
 
+let tn = TreeNode(3)
+let tn1 = TreeNode(9)
+let tn2 = TreeNode(20)
+let tn3 = TreeNode(15)
+let tn4 = TreeNode(7)
+
+tn.left = tn1
+tn.right = tn2
+tn2.left = tn3
+tn2.right = tn4
+print(levelOrderBottom(tn))
